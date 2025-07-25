@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Masjid Al Bayan ITI - Pusat Ibadah dan Pembelajaran Islam di Jakarta">
+    <meta name="keywords" content="masjid, islam, sholat, kajian, infaq, jakarta">
+    <title>Masjid Al Bayan ITI | Pusat Ibadah & Pembelajaran</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html"><img src="../assets/logo.png" alt="img_logo"></a>
+                    <!-- <div class="logo-icon">
+                        <div class="logo-text">الله</div>
+                    </div> -->
+                    <div class="logo-info">
+                        <h1>Masjid Al Bayan ITI</h1>
+                        <p>Pusat Ibadah & Pembelajaran</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav-desktop">
+                    <a href="#beranda" class="nav-link active">Beranda</a>
+                    <a href="../included/tentang-kami.html" class="nav-link">Tentang Kami</a>
+                    <a href="#program" class="nav-link">Program</a>
+                    <a href="../included/infaq.html" class="nav-link">Infaq Masjid</a>
+                    <a href="#kontak" class="nav-link">Kontak</a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <nav class="nav-mobile" id="mobileNav">
+                <a href="#beranda" class="nav-link-mobile">Beranda</a>
+                <a href="../included/tentang-kami.html" class="nav-link-mobile">Tentang Kami</a>
+                <a href="#program" class="nav-link-mobile">Program</a>
+                <a href="../included/infaq.html" class="nav-link-mobile">Infaq Masjid</a>
+                <a href="#kontak" class="nav-link-mobile">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="beranda">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="../assets/gambar_beranda.png" alt="Masjid Al Bayan ITI">
+                    <div class="hero-overlay"></div>
+
+                    <div class="hero-text">
+                        <h2>Selamat Datang di<br><span>Masjid Al Bayan ITI</span></h2>
+                        <p>Tempat ibadah, pembelajaran, dan kebersamaan umat dalam menjalankan ajaran Islam dengan penuh
+                            khusyuk dan keikhlasan</p>
+
+                        <div class="hero-buttons">
+                            <button class="btn btn-orange">
+                                Selengkapnya
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <button class="btn btn-green" id="btnKeuangan">
+                                Laporan Keuangan
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <line x1="12" y1="1" x2="12" y2="23" />
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                                </svg>
+                            </button>
+                            <button class="btn btn-blue">
+                                Infaq ke Masjid
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prayer Times Section -->
+    <section class="prayer-times">
+        <div class="container">
+            <div class="section-header">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12,6 12,12 16,14" />
+                </svg>
+                <h3>Jadwal Sholat Hari Ini</h3>
+                <p id="currentDate"></p>
+            </div>
+
+            <div class="prayer-grid">
+                <div class="prayer-card">
+                    <h4>Subuh</h4>
+                    <p>04:42</p>
+                </div>
+                <div class="prayer-card active">
+                    <h4>Dzuhur</h4>
+                    <p>12:00</p>
+                    <span class="next-badge">Selanjutnya</span>
+                </div>
+                <div class="prayer-card">
+                    <h4>Ashar</h4>
+                    <p>15:20</p>
+                </div>
+                <div class="prayer-card">
+                    <h4>Maghrib</h4>
+                    <p>17:53</p>
+                </div>
+                <div class="prayer-card">
+                    <h4>Isya</h4>
+                    <p>19:06</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="program">
+        <div class="container">
+            <div class="section-header">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M9 11H5a2 2 0 0 0-2 2v3c0 1.1.9 2 2 2h4m6-6h4a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-4m-6 0V9a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-1" />
+                </svg>
+                <h3>Layanan & Fasilitas Masjid</h3>
+                <p>Kami menyediakan berbagai layanan dan fasilitas lengkap untuk mendukung kegiatan ibadah,
+                    pembelajaran, dan pengembangan spiritual umat Islam</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <svg class="feature-icon orange" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg>
+                    <h4>Sholat Berjamaah</h4>
+                    <p>Lima waktu sholat wajib dan sholat sunnah berjamaah setiap hari dengan imam yang berpengalaman
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <svg class="feature-icon green" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                    </svg>
+                    <h4>Kajian Islam</h4>
+                    <p>Pengajian rutin dan kajian Al-Quran untuk memperdalam ilmu agama dan pemahaman Islam</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="feature-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                    <h4>Kegiatan Sosial</h4>
+                    <p>Program bakti sosial dan pemberdayaan masyarakat sekitar dengan berbagai kegiatan positif</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="feature-icon purple" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                    <h4>Event Islami</h4>
+                    <p>Perayaan hari besar Islam dan acara keagamaan khusus sepanjang tahun</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="kontak">
+        <div class="container">
+            <div class="section-header">
+                <h3>Hubungi Kami</h3>
+                <p>Kami siap melayani dan menjawab pertanyaan Anda seputar kegiatan masjid</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <svg class="contact-icon orange" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <h4>Alamat</h4>
+                    <p>Jl. Raya Puspitek No.101<br>Setu, Kec. Setu, Kota Tangerang Selatan, Banten 15314</p>
+                </div>
+                <div class="contact-card">
+                    <svg class="contact-icon green" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    <h4>Telepon</h4>
+                    <p>+62 21 1234 5678<br>+62 812 3456 7890</p>
+                </div>
+                <div class="contact-card">
+                    <svg class="contact-icon blue" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <h4>Email</h4>
+                    <p>info@masjidalbayaniti.id<br>admin@masjidalbayaniti.id</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html"><img src="../assets/logo.png" alt="img_logo"></a>
+                    <h3>Masjid Al Bayan ITI</h3>
+                </div>
+                <p class="footer-quote">إن المساجد بيوت الله، ومن أحب بيوت الله أحبَّه الله</p>
+                <p class="footer-quote">"Masjid adalah rumah Allah. Siapa yang mencintai rumah Allah, Allah
+                    mencintainya"</p>
+                <p class="footer-copyright">© 2025 Masjid Al Bayan ITI. Semua hak dilindungi undang-undang.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

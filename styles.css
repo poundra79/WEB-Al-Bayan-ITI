@@ -1,0 +1,745 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(to bottom, #fff7ed, #fef3c7);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    background: linear-gradient(to right, #f97316, #ea580c);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 56px;
+    height: 56px;
+    background: #dc2626;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.logo-icon:hover {
+    transform: rotate(0deg);
+}
+
+.logo-text {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transform: rotate(-45deg);
+    transition: transform 0.3s ease;
+}
+
+.logo-icon:hover .logo-text {
+    transform: rotate(45deg);
+}
+
+.logo-info h1 {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.logo-info p {
+    color: #fed7aa;
+    font-size: 14px;
+}
+
+.nav-desktop {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 8px 0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+
+.nav-link:hover {
+    color: #fed7aa;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: #fed7aa;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active,
+.nav-link-mobile.active {
+    color: #fed7aa !important;
+    font-weight: 700;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+    background: #ea580c;
+}
+
+.hamburger {
+    width: 28px;
+    height: 3px;
+    background: white;
+    margin: 3px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.mobile-menu-btn.active .hamburger:nth-child(1) {
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.mobile-menu-btn.active .hamburger:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active .hamburger:nth-child(3) {
+    transform: rotate(45deg) translate(-6px, -6px);
+}
+
+.nav-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 16px;
+    animation: fadeIn 0.3s ease;
+}
+
+.nav-mobile.active {
+    display: flex;
+}
+
+.nav-link-mobile {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-link-mobile:hover {
+    background: #ea580c;
+    color: #fed7aa;
+}
+
+/* Hero Section */
+.hero {
+    padding: 48px 0;
+}
+
+.hero-content {
+    position: relative;
+}
+
+.hero-image {
+    position: relative;
+    height: 500px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.hero-image:hover img {
+    transform: scale(1.05);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2), transparent);
+}
+
+.hero-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 48px;
+    color: white;
+}
+
+.hero-text h2 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text h2 span {
+    color: #fb923c;
+}
+
+.hero-text p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn-orange {
+    background: #f97316;
+    color: white;
+}
+
+.btn-orange:hover {
+    background: #ea580c;
+    box-shadow: 0 15px 35px rgba(249, 115, 22, 0.25);
+}
+
+.btn-green {
+    background: #10b981;
+    color: white;
+}
+
+.btn-green:hover {
+    background: #059669;
+    box-shadow: 0 15px 35px rgba(16, 185, 129, 0.25);
+}
+
+.btn-blue {
+    background: #3b82f6;
+    color: white;
+}
+
+.btn-blue:hover {
+    background: #2563eb;
+    box-shadow: 0 15px 35px rgba(59, 130, 246, 0.25);
+}
+
+.btn-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Prayer Times Section */
+.prayer-times {
+    padding: 64px 0;
+    background: linear-gradient(to right, #f97316, #ea580c);
+    position: relative;
+    overflow: hidden;
+}
+
+.prayer-times::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0);
+    background-size: 20px 20px;
+    opacity: 0.1;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 48px;
+    position: relative;
+}
+
+.section-icon {
+    width: 48px;
+    height: 48px;
+    color: #fed7aa;
+    margin: 0 auto 16px;
+}
+
+.section-header h3 {
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 16px;
+}
+
+.section-header p {
+    font-size: 20px;
+    color: #fed7aa;
+    font-weight: 500;
+}
+
+.prayer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+}
+
+.prayer-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.prayer-card:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.prayer-card.active {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid #fed7aa;
+}
+
+.prayer-card h4 {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.prayer-card p {
+    color: #fed7aa;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.next-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #fed7aa;
+    color: #ea580c;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Features Section */
+.features {
+    padding: 80px 0;
+}
+
+.features .section-header {
+    color: #1f2937;
+    margin-bottom: 64px;
+}
+
+.features .section-header h3 {
+    font-size: 48px;
+    color: #1f2937;
+}
+
+.features .section-header p {
+    font-size: 20px;
+    color: #6b7280;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #fed7aa;
+    transition: all 0.5s ease;
+    text-align: center;
+}
+
+.feature-card:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: translateY(-16px);
+    border-color: #fb923c;
+}
+
+.feature-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 24px;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1);
+}
+
+.feature-icon.orange {
+    color: #f97316;
+}
+
+.feature-icon.green {
+    color: #10b981;
+}
+
+.feature-icon.blue {
+    color: #3b82f6;
+}
+
+.feature-icon.purple {
+    color: #8b5cf6;
+}
+
+.feature-card h4 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 16px;
+    transition: color 0.3s ease;
+}
+
+.feature-card:hover h4 {
+    color: #f97316;
+}
+
+.feature-card p {
+    color: #6b7280;
+    line-height: 1.7;
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 0;
+    background: linear-gradient(to bottom, #fff7ed, white);
+}
+
+.contact .section-header {
+    color: #1f2937;
+    margin-bottom: 64px;
+}
+
+.contact .section-header h3 {
+    font-size: 48px;
+    color: #1f2937;
+}
+
+.contact .section-header p {
+    font-size: 20px;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.contact-card {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 16px;
+}
+
+.contact-icon.orange {
+    color: #f97316;
+}
+
+.contact-icon.green {
+    color: #10b981;
+}
+
+.contact-icon.blue {
+    color: #3b82f6;
+}
+
+.contact-card h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 12px;
+}
+
+.contact-card p {
+    color: #6b7280;
+    line-height: 1.7;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(to right, #1f2937, #111827);
+    color: white;
+    padding: 48px 0;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.footer-logo h3 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.footer-quote {
+    color: #9ca3af;
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+.footer-copyright {
+    color: #6b7280;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f97316;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ea580c;
+}
+
+/* Focus states */
+button:focus,
+a:focus {
+    outline: 2px solid #f97316;
+    outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .nav-desktop {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    .hero-text h2 {
+        font-size: 36px;
+    }
+    
+    .hero-text p {
+        font-size: 18px;
+    }
+    
+    .section-header h3 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+    
+    .hero-image {
+        height: 400px;
+    }
+    
+    .hero-text {
+        padding: 32px;
+    }
+    
+    .hero-text h2 {
+        font-size: 28px;
+    }
+    
+    .hero-text p {
+        font-size: 16px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .btn {
+        padding: 16px 32px;
+        font-size: 16px;
+    }
+    
+    .prayer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .section-header h3 {
+        font-size: 28px;
+    }
+    
+    .section-header p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .prayer-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-text h2 {
+        font-size: 24px;
+    }
+    
+    .logo-info h1 {
+        font-size: 20px;
+    }
+    
+    .logo-icon {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .logo-text {
+        font-size: 16px;
+    }
+}

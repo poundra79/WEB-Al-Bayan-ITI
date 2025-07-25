@@ -1,0 +1,525 @@
+/* Infaq Page Specific Styles */
+
+.nav-link.active,
+.nav-link-mobile.active {
+    color: #fed7aa !important;
+    font-weight: 700;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    padding: 80px 0 60px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.2) 1px, transparent 0);
+    background-size: 30px 30px;
+    opacity: 0.3;
+}
+
+.page-header-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.page-header h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.page-header p {
+    font-size: 20px;
+    color: #fed7aa;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Infaq Categories */
+.infaq-categories {
+    padding: 60px 0;
+    background: linear-gradient(to bottom, #fff7ed, white);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.category-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 32px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 2px solid #fed7aa;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.category-card:hover::before {
+    left: 100%;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: #f97316;
+}
+
+.category-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 24px;
+    color: #f97316;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover .category-icon {
+    transform: scale(1.1);
+}
+
+.category-card h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 12px;
+}
+
+.category-card p {
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* Infaq Sections */
+.infaq-section {
+    padding: 80px 0;
+    position: relative;
+}
+
+.infaq-section:nth-child(odd) {
+    background: #fef3c7;
+}
+
+.infaq-section:nth-child(even) {
+    background: #fed7aa;
+}
+
+.infaq-content {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 60px;
+    align-items: start;
+}
+
+.infaq-info h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 32px;
+}
+
+.info-item {
+    margin-bottom: 32px;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    border-left: 4px solid #f97316;
+}
+
+.info-item h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 12px;
+}
+
+.info-item p {
+    color: #4b5563;
+    line-height: 1.7;
+}
+
+.payment-methods {
+    position: sticky;
+    top: 120px;
+}
+
+.payment-card {
+    background: white;
+    border-radius: 20px;
+    padding: 32px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.payment-card:hover {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+}
+
+.bank-logo {
+    margin-bottom: 24px;
+}
+
+.bank-logo img {
+    width: 120px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.qr-code {
+    margin-bottom: 24px;
+}
+
+.qr-placeholder {
+    width: 200px;
+    height: 200px;
+    background: #f3f4f6;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border: 2px dashed #d1d5db;
+}
+
+.qr-placeholder svg {
+    width: 80px;
+    height: 80px;
+    color: #9ca3af;
+}
+
+.payment-card p {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+/* Financial Report */
+.financial-report {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1f2937, #111827);
+    color: white;
+}
+
+.financial-report .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.financial-report .section-header h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    background: linear-gradient(45deg, #f97316, #fbbf24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.financial-report .section-header p {
+    color: #9ca3af;
+    font-size: 18px;
+}
+
+.report-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+}
+
+.report-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.report-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-4px);
+}
+
+.report-card h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    color: #f97316;
+}
+
+.amount-display {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 24px;
+}
+
+.currency {
+    font-size: 20px;
+    color: #9ca3af;
+    margin-right: 8px;
+}
+
+.amount {
+    font-size: 36px;
+    font-weight: bold;
+    color: #10b981;
+}
+
+.report-details {
+    margin-bottom: 24px;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-item span:first-child {
+    color: #d1d5db;
+}
+
+.detail-item span:last-child {
+    color: white;
+    font-weight: 600;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #f97316, #fbbf24);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+/* Contact Info */
+.contact-info {
+    padding: 60px 0;
+    background: linear-gradient(to bottom, #fff7ed, white);
+}
+
+.contact-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-content h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 16px;
+}
+
+.contact-content p {
+    color: #6b7280;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.contact-method:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.contact-method svg {
+    width: 32px;
+    height: 32px;
+    color: #f97316;
+    flex-shrink: 0;
+}
+
+.contact-method h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 4px;
+}
+
+.contact-method p {
+    color: #6b7280;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .infaq-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .payment-methods {
+        position: static;
+    }
+    
+    .report-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 32px;
+    }
+    
+    .page-header p {
+        font-size: 16px;
+    }
+    
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .category-card {
+        padding: 32px 24px;
+    }
+    
+    .infaq-section {
+        padding: 60px 0;
+    }
+    
+    .infaq-info h2 {
+        font-size: 28px;
+    }
+    
+    .info-item {
+        padding: 20px;
+    }
+    
+    .payment-card {
+        padding: 24px;
+    }
+    
+    .qr-placeholder {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .financial-report .section-header h2 {
+        font-size: 28px;
+    }
+    
+    .report-card {
+        padding: 24px;
+    }
+    
+    .amount {
+        font-size: 28px;
+    }
+    
+    .contact-methods {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        padding: 60px 0 40px;
+    }
+    
+    .page-header h1 {
+        font-size: 24px;
+    }
+    
+    .category-icon {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .category-card h3 {
+        font-size: 20px;
+    }
+    
+    .infaq-info h2 {
+        font-size: 24px;
+    }
+    
+    .qr-placeholder {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .qr-placeholder svg {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Animation for counting numbers */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.amount {
+    animation: countUp 0.8s ease-out;
+}
